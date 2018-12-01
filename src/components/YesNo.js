@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 
 class YesNo extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = { result: '' }
+    }
+
+    componentWillMount() {
+        const result = this.calculateResult();
+        this.setState({ result: result })
+    }
+
+    calculateResult() {
+        return Math.random() < 0.5 ? 'Yes' : 'No'
     }
 
     render() {
@@ -10,10 +20,9 @@ class YesNo extends Component {
             <div className="App">
                 <header className="App-header">
                     <p>
-                        YesNo
+                        {this.state.result}
                     </p>
                 </header>
-                <p>test</p>
             </div>
         );
     }

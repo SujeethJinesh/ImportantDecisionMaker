@@ -13,7 +13,6 @@ class SelectChoices extends Component {
                         SelectChoices
                     </p>
                 </header>
-                <p>test</p>
             </div>
         );
     }
